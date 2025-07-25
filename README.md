@@ -19,7 +19,9 @@ cp .env.example .env
 
 ### 2. Paste your API Key in the .env file
 
+```txt
 OPENAI_API_KEY=your-api-key-here
+```
 
 ### 3. Run the app from the Run/Debug extension
 
