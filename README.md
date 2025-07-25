@@ -11,5 +11,19 @@ This is a simple Flask-based chatbot template using the OpenAI API, designed to 
 
 ## Quick Start
 
+### 1. Make a copy of .env.example called .env
+
+```bash
+cp .env.example .env
+```
+
+### 2. Paste your API Key in the .env file
+OPENAI_API_KEY=your-api-key-here
+
+### 3. Launch the Codespace by going to the green `Code` button and selecting the Codespaces tab.
+
+
+### 4. Run the app from the terminal
 ```bash
 flask run --host=0.0.0.0
+```
