@@ -11,10 +11,15 @@ def home():
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    data = request.json
-    user_input = data.get("message", "")
-    response = ask_chatbot(user_input)
-    return jsonify({"response": response})
+    try:
+        data = request.get_json(force=True)
+        print("Received input:", data)
+        user_input = data.get("message", "")
+        response = ask_chatbot(user_input)
+        return jsonify({"response": response})
+    except Exception as e:
+        print("❌ Error:", e)
+        return jsonify({"response": "An error occurred processing your message."}), 500
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")

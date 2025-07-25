@@ -18,12 +18,10 @@ cp .env.example .env
 ```
 
 ### 2. Paste your API Key in the .env file
+
 OPENAI_API_KEY=your-api-key-here
 
-### 3. Launch the Codespace by going to the green `Code` button and selecting the Codespaces tab.
+### 3. Run the app from the Run/Debug extension
 
+Click on the menu on left (Run button with Bug icon) amd click the Run Flask button.
 
-### 4. Run the app from the terminal
-```bash
-flask run --host=0.0.0.0
-```
