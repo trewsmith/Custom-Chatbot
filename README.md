@@ -2,9 +2,6 @@
 
 This is a simple Flask-based chatbot template using the OpenAI API, designed to integrate with Canvas LMS.
 
-## Launch in Codespaces
-[![Open in Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?template_repository=YOUR-USERNAME/canvas-chatbot)
-
 ## Structure
 
 - `chatbot.py`: Chat wrapper for OpenAI
