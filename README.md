@@ -1,6 +1,6 @@
-# Canvas Chatbot Template
+# Custom Chatbot
 
-This is a simple Flask-based chatbot template using the OpenAI API, designed to integrate with Canvas LMS.
+This is a simple Flask-based chatbot template using the OpenAI API.
 
 ## Structure
 
