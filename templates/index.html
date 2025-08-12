@@ -12,16 +12,107 @@
     </style>
 </head>
 <body>
-    <h2>Ask the Biology Assignments Assistant</h2>
-    <textarea id="question" placeholder="Chat with me about anything regarding your assignment..."></textarea>
+    <h2>AI Evaluator</h2>
+    <h3>Challenge 1 - Technical </h3>
+    <p>Complete the following problem using whatever coding language you know best. Scores will be evaluated on functionality, accessibility, and efficiency.
+</p>
+<p> Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+Example 1:
+Input: nums = [2,2,1]
+Output: 1
+Example 2:
+Input: nums = [4,1,2,1,2]
+Output: 4
+
+Example 3:
+Input: nums = [1]
+Output: 1
+</p>
+
+
+    <textarea id="question" placeholder="Paste your code here..."></textarea>
     <br>
-    <button onclick="askBot()">Ask</button>
+    <button onclick="askBot()">Submit</button>
     <div id="response"></div>
+
+    <br>
+
+    <h3>Challenge 2 - Technical </h3>
+    <p>Complete the following problem using whatever coding language you know best. Scores will be evaluated on functionality, accessibility, and efficiency.
+</p>
+<p> You are given an integer array prices where prices[i] is the price of a given stock on the ith day.
+On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time. However, you can buy it then immediately sell it on the same day.
+Find and return the maximum profit you can achieve.
+
+Example 1:
+Input: prices = [7,1,5,3,6,4]
+Output: 7
+Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
+Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+Total profit is 4 + 3 = 7.
+
+
+Example 2:
+Input: prices = [1,2,3,4,5]
+Output: 4
+Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
+Total profit is 4.
+
+
+Example 3:
+Input: prices = [7,6,4,3,1]
+Output: 0
+Explanation: There is no way to make a positive profit, so we never buy the stock to achieve the maximum profit of 0.
+
+</p>
+
+
+    <textarea id="question2" placeholder="Paste your code here..."></textarea>
+    <br>
+    <button onclick="askBot2()">Submit</button>
+    <div id="response2"></div>
+
+    <h3>Challenge 3 - Creative </h3>
+    <p>Create an interactive webpage using HTML, CSS, and JavaScript on a topic of your choice. The thematic elements, color scheme, website design, layout, and user experience should reflect the theme and aesthetic of the topic. Scores will be evaluated on functionality, accessibility, efficiency, and creativity.
+    </p>
+
+
+
+    <textarea id="question3" placeholder="Paste your code here. If you have seperated HTML/CSS/JavaScript files paste them one after each other."></textarea>
+    <br>
+    <button onclick="askBot3()">Submit</button>
+    <div id="response3"></div>
 
     <script>
         async function askBot() {
             const question = document.getElementById("question").value;
             const responseDiv = document.getElementById("response");
+            responseDiv.innerText = "Thinking...";
+            const response = await fetch("/chat", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ message: question })
+            });
+            const data = await response.json();
+            responseDiv.innerText = data.response;
+        }
+        async function askBot2() {
+            const question = document.getElementById("question2").value;
+            const responseDiv = document.getElementById("response2");
+            responseDiv.innerText = "Thinking...";
+            const response = await fetch("/chat", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ message: question })
+            });
+            const data = await response.json();
+            responseDiv.innerText = data.response;
+        }
+        async function askBot3() {
+            const question = document.getElementById("question3").value;
+            const responseDiv = document.getElementById("response3");
             responseDiv.innerText = "Thinking...";
             const response = await fetch("/chat", {
                 method: "POST",
